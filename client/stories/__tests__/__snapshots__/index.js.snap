@@ -1,0 +1,102 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots SubmitShaForm 0 shas 1`] = `
+<form
+  onSubmit={[Function]}
+>
+  <input
+    onChange={[Function]}
+    required={true}
+    type="text"
+    value=""
+  />
+  <button
+    type="submit"
+  >
+    Submit
+  </button>
+  <table>
+    <thead>
+      <tr>
+        <th>
+          Shas
+        </th>
+      </tr>
+    </thead>
+    <tbody />
+  </table>
+</form>
+`;
+
+exports[`Storyshots SubmitShaForm 1 shas 1`] = `
+<form
+  onSubmit={[Function]}
+>
+  <input
+    onChange={[Function]}
+    required={true}
+    type="text"
+    value=""
+  />
+  <button
+    type="submit"
+  >
+    Submit
+  </button>
+  <table>
+    <thead>
+      <tr>
+        <th>
+          Shas
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          1
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</form>
+`;
+
+exports[`Storyshots SubmitShaForm 2 shas 1`] = `
+<form
+  onSubmit={[Function]}
+>
+  <input
+    onChange={[Function]}
+    required={true}
+    type="text"
+    value=""
+  />
+  <button
+    type="submit"
+  >
+    Submit
+  </button>
+  <table>
+    <thead>
+      <tr>
+        <th>
+          Shas
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          1
+        </td>
+      </tr>
+      <tr>
+        <td>
+          2
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</form>
+`;

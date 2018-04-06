@@ -1,0 +1,21 @@
+{
+  "collectCoverageFrom": [
+    "**/*.js"
+  ],
+  "coveragePathIgnorePatterns": [
+    "/node_modules/",
+    "/__tests__/",
+    ".css"
+  ],
+  "roots": [
+    "client"
+  ],
+  "testEnvironment": "jsdom",
+  "transform": {
+    "\\.css$": "<rootDir>/node_modules/jest-css-modules",
+    "\\.js$": "<rootDir>/node_modules/babel-jest"
+  },
+  "transformIgnorePatterns": [
+    "/node_modules/.*\\.js$"
+  ]
+}
