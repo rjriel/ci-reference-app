@@ -16,9 +16,15 @@ jobs:
       - checkout
       - run: npm install
       - run: npx storybook-to-ghpages
-    requires:
+workflows:
+  version: 2
+  commit: # this workflow runs on every commit
+    jobs:
       - test
-    filters:
-      branches:
-        only:
-          - master
+      - publish-storybook:
+          requires:
+            - test
+          filters:
+            branches:
+              only:
+                - master
