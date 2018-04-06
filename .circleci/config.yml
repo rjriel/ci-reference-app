@@ -1,0 +1,37 @@
+version: 2
+jobs:
+  test:
+    docker:
+      - image: circleci/node:8
+    steps:
+      - checkout
+      - run: npm install
+      - run: npm run eslint
+      - run: npm run stylelint
+      - run: npm run test:jsdom -- --coverage
+      - run: npx codecov
+  publish-storybook:
+    docker:
+      - image: circleci/node:8
+    steps:
+      - checkout
+      - run: npm install
+      - run: npm run build-storybook
+      - run: cp -R .circleci storybook-static/
+      - run: npx storybook-to-ghpages --existing-output-dir=storybook-static
+workflows:
+  version: 2
+  commit: # this workflow runs on every commit
+    jobs:
+      - test:
+          filters:
+            branches:
+              ignore:
+                - gh-pages
+      - publish-storybook:
+          requires:
+            - test
+          filters:
+            branches:
+              only:
+                - master
