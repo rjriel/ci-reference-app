@@ -16,12 +16,18 @@ jobs:
     steps:
       - checkout
       - run: npm install
-      - run: npx storybook-to-ghpages
+      - run: npm run build-storybook
+      - run: cp -R .circleci storybook-static/
+      - run: npx storybook-to-ghpages --existing-output-dir=storybook-static
 workflows:
   version: 2
   commit: # this workflow runs on every commit
     jobs:
-      - test
+      - test:
+        filters:
+          branches:
+            ignore:
+              - gh-pages
       - publish-storybook:
           requires:
             - test
