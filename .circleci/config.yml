@@ -1,6 +1,6 @@
 version: 2
 jobs:
-  build:
+  test:
     docker:
       - image: circleci/node:8
     steps:
@@ -9,3 +9,16 @@ jobs:
       - run: npm run eslint
       - run: npm run stylelint
       - run: npm run test:jsdom
+  publish-storybook:
+    docker:
+      - image: circleci/node:8
+    steps:
+      - checkout
+      - run: npm install
+      - run: npx storybook-to-ghpages
+    requires:
+      - test
+    filters:
+      branches:
+        only:
+          - master

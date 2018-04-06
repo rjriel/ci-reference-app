@@ -39,6 +39,7 @@
     "@storybook/addon-links": "^4.0.0-alpha.1",
     "@storybook/addon-storyshots": "^4.0.0-alpha.1",
     "@storybook/react": "^4.0.0-alpha.1",
+    "@storybook/storybook-deployer": "^2.3.0",
     "babel-core": "^6.26.0",
     "babel-eslint": "^8.2.2",
     "babel-jest": "^22.4.3",
